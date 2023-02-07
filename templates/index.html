@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+Assignment 1
+{% endblock %}
+
+
+
+
+{% block body %}
+<div>
+    <div class="card" style="margin: 1em 0; padding: 1em 0 0 0; align-items: center;">
+        <h3>Filter Data</h3>
+        <div class="form-group">
+            <!-- <form method="post" action="/upload-photos" 
+                enctype="multipart/form-data">
+                <div style="display: flex;">
+                    <input type="file" accept=".png, .jpeg, .jpg, .gif" name="photos" multiple class="form-control" style="margin-right: 1em;">
+                    <input type="submit" class="btn btn-primary">
+                </div>
+            </form> -->
+            <form action="{{ url_for('handle_data') }}" method="post">
+                <input type="text" placeholder="Username" name="username">
+                <input type="number" placeholder="Lower Salary Range" name="l_salary">
+                <input type="submit">
+            </form>
+        </div> 
+    </div>
+    {{img_html|safe}}
+
+</div>
+
+
+<!-- JS code -->
+<script>
+   
+</script>
+
+{% endblock %}
